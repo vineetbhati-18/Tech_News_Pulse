@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
   <title>Tech News Pulse</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
 <div class="container">
-
   <h1>Tech News Pulse</h1>
-
-  <!-- Loading -->
-  <div id="loading">Loading news...</div>
-
-  <!-- News -->
+  <input type="text" id="searchInput" placeholder="Search news...">
+  <div class="filters">
+    <button onclick="fetchNews('ai')">AI</button>
+    <button onclick="fetchNews('crypto')">Crypto</button>
+    <button onclick="fetchNews('gadgets')">Gadgets</button>
+  </div>
+  <select id="sortSelect">
+    <option value="">Sort By</option>
+    <option value="asc">Title A-Z</option>
+    <option value="desc">Title Z-A</option>
+  </select>
+  <button id="toggleMode">🌙</button>
+  <div id="loading">Loading...</div>
   <div id="newsContainer"></div>
-
+  <h2>Saved Articles</h2>
+  <div id="savedContainer"></div>
 </div>
-
 <script src="script.js"></script>
 </body>
+
 </html>
