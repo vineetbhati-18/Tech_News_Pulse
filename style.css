@@ -1,53 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #111827;
   transition: 0.3s;
 }
 body.dark {
   background: #0f172a;
-  color: white;
+  color: #e2e8f0;
 }
-.container {
+.main-container {
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 15px;
 }
-h1 {
+header {
+  position: relative;
   text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  margin-bottom: 20px;
+}
+body.dark header {
+  background: #020617;
+}
+.logo {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #2563eb;
+  animation: glow 2s infinite alternate;
+}
+body.dark .logo span {
+  color: #38bdf8;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(37,99,235,0.3); }
+  to { text-shadow: 0 0 15px rgba(37,99,235,0.8); }
 }
 input {
   width: 60%;
   padding: 10px;
-  display: block;
-  margin: 10px auto;
+  border-radius: 25px;
+  border: none;
+  margin-top: 10px;
+  background: #e2e8f0;
 }
-.filters {
-  text-align: center;
+body.dark input {
+  background: #020617;
+  color: white;
 }
 button {
+  padding: 8px 14px;
   margin: 5px;
-  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
   cursor: pointer;
+  background: #e2e8f0;
+}
+body.dark button {
+  background: #1e293b;
+  color: #38bdf8;
 }
 #newsContainer, #savedContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 .card {
-  background: #f4f4f4;
+  background: #ffffff;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 15px;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transition: 0.3s;
 }
 body.dark .card {
   background: #1e293b;
 }
-.saved-card {
-  background: #dbeafe;
-  padding: 10px;
-  border-radius: 10px;
+@keyframes fadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-body.dark .saved-card {
-  background: #334155;
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-size: 16px;
+}
+.card p {
+  font-size: 13px;
+  color: gray;
+}
+.card a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.card button {
+  display: block;
+  margin: 15px auto 0 auto;
+  background: #2563eb;
+  color: white;
+}
+body.dark .card button {
+  background: #38bdf8;
+  color: black;
+}
+.loader {
+  text-align: center;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+#toggleMode {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
   <meta charset="UTF-8">
   <title>Tech News Pulse</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div class="container">
-  <h1>Tech News Pulse</h1>
-  <input type="text" id="searchInput" placeholder="Search news...">
-  <div class="filters">
-    <button onclick="fetchNews('ai')">AI</button>
-    <button onclick="fetchNews('crypto')">Crypto</button>
-    <button onclick="fetchNews('gadgets')">Gadgets</button>
-  </div>
-  <select id="sortSelect">
-    <option value="">Sort By</option>
-    <option value="asc">Title A-Z</option>
-    <option value="desc">Title Z-A</option>
-  </select>
-  <button id="toggleMode">🌙</button>
-  <div id="loading">Loading...</div>
+
+<div class="main-container">
+
+  <header>
+    <h1 class="logo">Tech News <span>Pulse</span></h1>
+
+    <input type="text" id="searchInput" placeholder="Search news...">
+
+    <div class="filters">
+      <button onclick="filterCategory('ai')">AI</button>
+      <button onclick="filterCategory('crypto')">Crypto</button>
+      <button onclick="filterCategory('gadgets')">Gadgets</button>
+    </div>
+
+    <button id="toggleMode">🌙</button>
+  </header>
+
+  <h2>Latest News</h2>
   <div id="newsContainer"></div>
+
   <h2>Saved Articles</h2>
   <div id="savedContainer"></div>
+
 </div>
+
 <script src="script.js"></script>
 </body>
-
 </html>
